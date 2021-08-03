@@ -1,0 +1,3 @@
+wvSetPosition -win $_nWave1 {("G1" 0)}
+wvOpenFile -win $_nWave1 \
+           {/home/team01/dclab/NTUEE-DCLAB-Materials/lab1/sim/Lab1_test.fsdb}

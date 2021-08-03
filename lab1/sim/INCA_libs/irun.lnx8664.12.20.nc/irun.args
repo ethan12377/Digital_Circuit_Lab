@@ -1,0 +1,11 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
++access+rw
+-loadvpi
+/opt/nicotb/lib//cpp/nicotb.so:VpiBoot
++incdir+../src/
++incdir+../include/
+/opt/nicotb/lib//verilog/Utils.sv
+Top_test.sv

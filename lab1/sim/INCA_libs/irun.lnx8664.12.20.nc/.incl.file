@@ -1,0 +1,6 @@
+./LAB1_include.sv
+../src//LAB1_include.sv
+./Top.sv
+./DE2_115/SevenHexDecoder.sv
+./DE2_115/Debounce.sv
+./DE2_115/DE2_115.sv

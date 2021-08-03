@@ -1,0 +1,22 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
++access+rw
++incdir+../src/
++incdir+../include/
+-ACCESS
++rw
+-LOADVPI
+/opt/nicotb/lib//cpp/nicotb.so:VpiBoot
+-MESSAGES
+-XLMODE
+./INCA_libs/irun.lnx8664.12.20.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx8664.12.20.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.12.20.nc/hdl.var
+-WORK
+worklib
+-HASXLMODE

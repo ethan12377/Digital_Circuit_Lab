@@ -1,0 +1,182 @@
+irun(64): 12.20-s012: (c) Copyright 1995-2013 Cadence Design Systems, Inc.
+TOOL:	irun(64)	12.20-s012: Started on Sep 27, 2019 at 10:08:04 CST
+irun
+	+access+rw
+	-loadvpi /opt/nicotb/lib//cpp/nicotb.so:VpiBoot
+	+incdir+../src/
+	+incdir+../include/
+	/opt/nicotb/lib//verilog/Utils.sv
+	Top_test.sv
+Recompiling... reason: file '../src/Top.sv' is newer than expected.
+	expected: Fri Sep 27 10:03:50 2019
+	actual:   Fri Sep 27 10:08:01 2019
+file: Top_test.sv
+	module worklib.LFSR:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+DE2_115 dut(.CLOCK_50(i_clk));
+          |
+ncelab: *W,CUVWSP (./Top_test.sv,22|10): 74 output ports were not connected:
+ncelab: (../src/DE2_115/DE2_115.sv,7): SMA_CLKOUT
+ncelab: (../src/DE2_115/DE2_115.sv,8): LEDG
+ncelab: (../src/DE2_115/DE2_115.sv,9): LEDR
+ncelab: (../src/DE2_115/DE2_115.sv,12): HEX0
+ncelab: (../src/DE2_115/DE2_115.sv,13): HEX1
+ncelab: (../src/DE2_115/DE2_115.sv,14): HEX2
+ncelab: (../src/DE2_115/DE2_115.sv,15): HEX3
+ncelab: (../src/DE2_115/DE2_115.sv,16): HEX4
+ncelab: (../src/DE2_115/DE2_115.sv,17): HEX5
+ncelab: (../src/DE2_115/DE2_115.sv,18): HEX6
+ncelab: (../src/DE2_115/DE2_115.sv,19): HEX7
+ncelab: (../src/DE2_115/DE2_115.sv,20): LCD_BLON
+ncelab: (../src/DE2_115/DE2_115.sv,22): LCD_EN
+ncelab: (../src/DE2_115/DE2_115.sv,23): LCD_ON
+ncelab: (../src/DE2_115/DE2_115.sv,24): LCD_RS
+ncelab: (../src/DE2_115/DE2_115.sv,25): LCD_RW
+ncelab: (../src/DE2_115/DE2_115.sv,26): UART_CTS
+ncelab: (../src/DE2_115/DE2_115.sv,29): UART_TXD
+ncelab: (../src/DE2_115/DE2_115.sv,34): SD_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,38): VGA_B
+ncelab: (../src/DE2_115/DE2_115.sv,39): VGA_BLANK_N
+ncelab: (../src/DE2_115/DE2_115.sv,40): VGA_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,41): VGA_G
+ncelab: (../src/DE2_115/DE2_115.sv,42): VGA_HS
+ncelab: (../src/DE2_115/DE2_115.sv,43): VGA_R
+ncelab: (../src/DE2_115/DE2_115.sv,44): VGA_SYNC_N
+ncelab: (../src/DE2_115/DE2_115.sv,45): VGA_VS
+ncelab: (../src/DE2_115/DE2_115.sv,49): AUD_DACDAT
+ncelab: (../src/DE2_115/DE2_115.sv,51): AUD_XCK
+ncelab: (../src/DE2_115/DE2_115.sv,52): EEP_I2C_SCLK
+ncelab: (../src/DE2_115/DE2_115.sv,54): I2C_SCLK
+ncelab: (../src/DE2_115/DE2_115.sv,56): ENET0_GTX_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,58): ENET0_MDC
+ncelab: (../src/DE2_115/DE2_115.sv,60): ENET0_RST_N
+ncelab: (../src/DE2_115/DE2_115.sv,68): ENET0_TX_DATA
+ncelab: (../src/DE2_115/DE2_115.sv,69): ENET0_TX_EN
+ncelab: (../src/DE2_115/DE2_115.sv,70): ENET0_TX_ER
+ncelab: (../src/DE2_115/DE2_115.sv,72): ENET1_GTX_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,74): ENET1_MDC
+ncelab: (../src/DE2_115/DE2_115.sv,76): ENET1_RST_N
+ncelab: (../src/DE2_115/DE2_115.sv,84): ENET1_TX_DATA
+ncelab: (../src/DE2_115/DE2_115.sv,85): ENET1_TX_EN
+ncelab: (../src/DE2_115/DE2_115.sv,86): ENET1_TX_ER
+ncelab: (../src/DE2_115/DE2_115.sv,91): TD_RESET_N
+ncelab: (../src/DE2_115/DE2_115.sv,94): OTG_ADDR
+ncelab: (../src/DE2_115/DE2_115.sv,95): OTG_CS_N
+ncelab: (../src/DE2_115/DE2_115.sv,96): OTG_WR_N
+ncelab: (../src/DE2_115/DE2_115.sv,97): OTG_RD_N
+ncelab: (../src/DE2_115/DE2_115.sv,99): OTG_RST_N
+ncelab: (../src/DE2_115/DE2_115.sv,101): DRAM_ADDR
+	...(etc)...
+
+DE2_115 dut(.CLOCK_50(i_clk));
+          |
+ncelab: *W,CUVWSI (./Top_test.sv,22|10): 41 input ports were not connected:
+ncelab: (../src/DE2_115/DE2_115.sv,3): CLOCK2_50
+ncelab: (../src/DE2_115/DE2_115.sv,4): CLOCK3_50
+ncelab: (../src/DE2_115/DE2_115.sv,5): ENETCLK_25
+ncelab: (../src/DE2_115/DE2_115.sv,6): SMA_CLKIN
+ncelab: (../src/DE2_115/DE2_115.sv,10): KEY
+ncelab: (../src/DE2_115/DE2_115.sv,11): SW
+ncelab: (../src/DE2_115/DE2_115.sv,27): UART_RTS
+ncelab: (../src/DE2_115/DE2_115.sv,28): UART_RXD
+ncelab: (../src/DE2_115/DE2_115.sv,37): SD_WP_N
+ncelab: (../src/DE2_115/DE2_115.sv,46): AUD_ADCDAT
+ncelab: (../src/DE2_115/DE2_115.sv,57): ENET0_INT_N
+ncelab: (../src/DE2_115/DE2_115.sv,59): ENET0_MDIO
+ncelab: (../src/DE2_115/DE2_115.sv,61): ENET0_RX_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,62): ENET0_RX_COL
+ncelab: (../src/DE2_115/DE2_115.sv,63): ENET0_RX_CRS
+ncelab: (../src/DE2_115/DE2_115.sv,64): ENET0_RX_DATA
+ncelab: (../src/DE2_115/DE2_115.sv,65): ENET0_RX_DV
+ncelab: (../src/DE2_115/DE2_115.sv,66): ENET0_RX_ER
+ncelab: (../src/DE2_115/DE2_115.sv,67): ENET0_TX_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,71): ENET0_LINK100
+ncelab: (../src/DE2_115/DE2_115.sv,73): ENET1_INT_N
+ncelab: (../src/DE2_115/DE2_115.sv,75): ENET1_MDIO
+ncelab: (../src/DE2_115/DE2_115.sv,77): ENET1_RX_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,78): ENET1_RX_COL
+ncelab: (../src/DE2_115/DE2_115.sv,79): ENET1_RX_CRS
+ncelab: (../src/DE2_115/DE2_115.sv,80): ENET1_RX_DATA
+ncelab: (../src/DE2_115/DE2_115.sv,81): ENET1_RX_DV
+ncelab: (../src/DE2_115/DE2_115.sv,82): ENET1_RX_ER
+ncelab: (../src/DE2_115/DE2_115.sv,83): ENET1_TX_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,87): ENET1_LINK100
+ncelab: (../src/DE2_115/DE2_115.sv,88): TD_CLK27
+ncelab: (../src/DE2_115/DE2_115.sv,89): TD_DATA
+ncelab: (../src/DE2_115/DE2_115.sv,90): TD_HS
+ncelab: (../src/DE2_115/DE2_115.sv,92): TD_VS
+ncelab: (../src/DE2_115/DE2_115.sv,98): OTG_INT
+ncelab: (../src/DE2_115/DE2_115.sv,100): IRDA_RXD
+ncelab: (../src/DE2_115/DE2_115.sv,123): FL_RY
+ncelab: (../src/DE2_115/DE2_115.sv,127): HSMC_CLKIN_P1
+ncelab: (../src/DE2_115/DE2_115.sv,128): HSMC_CLKIN_P2
+ncelab: (../src/DE2_115/DE2_115.sv,129): HSMC_CLKIN0
+ncelab: (../src/DE2_115/DE2_115.sv,134): HSMC_RX_D_P
+
+DE2_115 dut(.CLOCK_50(i_clk));
+          |
+ncelab: *W,CUVWSB (./Top_test.sv,22|10): 19 inout ports were not connected:
+ncelab: (../src/DE2_115/DE2_115.sv,21): LCD_DATA
+ncelab: (../src/DE2_115/DE2_115.sv,30): PS2_CLK
+ncelab: (../src/DE2_115/DE2_115.sv,31): PS2_DAT
+ncelab: (../src/DE2_115/DE2_115.sv,32): PS2_CLK2
+ncelab: (../src/DE2_115/DE2_115.sv,33): PS2_DAT2
+ncelab: (../src/DE2_115/DE2_115.sv,35): SD_CMD
+ncelab: (../src/DE2_115/DE2_115.sv,36): SD_DAT
+ncelab: (../src/DE2_115/DE2_115.sv,47): AUD_ADCLRCK
+ncelab: (../src/DE2_115/DE2_115.sv,48): AUD_BCLK
+ncelab: (../src/DE2_115/DE2_115.sv,50): AUD_DACLRCK
+ncelab: (../src/DE2_115/DE2_115.sv,53): EEP_I2C_SDAT
+ncelab: (../src/DE2_115/DE2_115.sv,55): I2C_SDAT
+ncelab: (../src/DE2_115/DE2_115.sv,93): OTG_DATA
+ncelab: (../src/DE2_115/DE2_115.sv,107): DRAM_DQ
+ncelab: (../src/DE2_115/DE2_115.sv,113): SRAM_DQ
+ncelab: (../src/DE2_115/DE2_115.sv,120): FL_DQ
+ncelab: (../src/DE2_115/DE2_115.sv,126): GPIO
+ncelab: (../src/DE2_115/DE2_115.sv,133): HSMC_D
+ncelab: (../src/DE2_115/DE2_115.sv,136): EX_IO
+
+Debounce deb0(
+            |
+ncelab: *W,CUVWSP (../src/DE2_115/DE2_115.sv,142|12): 2 output ports were not connected:
+ncelab: (../src/DE2_115/Debounce.sv,5): o_debounced
+ncelab: (../src/DE2_115/Debounce.sv,7): o_pos
+
+	Top level design units:
+		Top_test
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.LFSR:sv <0x2299a230>
+			streams:   4, words:  1104
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                13       8
+		Registers:              42      32
+		Scalar wires:          111       -
+		Vectored wires:         63       -
+		Always blocks:          14       9
+		Initial blocks:          3       3
+		Cont. assignments:       5      13
+		Pseudo assignments:     20      20
+		Simulation timescale:  1us
+	Writing initial simulation snapshot: worklib.Top_test:sv
+Loading snapshot worklib.Top_test:sv .................... Done
+*Verdi3* Loading libsscore_ius122.so
+*Verdi3* : Enable Parallel Dumping.
+ncsim> source /opt/CAD/INCISIV/cur/tools/inca/files/ncsimrc
+ncsim> run
+FSDB Dumper for IUS, Release Verdi3_2013.07, Linux x86_64/64bit, 07/04/2013
+(C) 1996 - 2013 by Synopsys, Inc.
+*Verdi3* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi3* : Create FSDB file 'Lab1_test.fsdb'
+*Verdi3* : Begin traversing the scope (Top_test), layer (0).
+*Verdi3* : Enable +mda dumping.
+*Verdi3* : End of traversing.
+Simulation complete via $finish(1) at time 35499950 US + 1
+./Top_test.sv:9 `WithFinish
+ncsim> exit
+TOOL:	irun(64)	12.20-s012: Exiting on Sep 27, 2019 at 10:09:32 CST  (total: 00:01:28)

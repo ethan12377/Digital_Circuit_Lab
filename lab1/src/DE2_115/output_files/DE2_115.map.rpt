@@ -1,0 +1,944 @@
+Analysis & Synthesis report for DE2_115
+Fri Sep 27 11:06:19 2019
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Debounce:deb0
+ 11. Parameter Settings for User Entity Instance: SevenHexDecoder:seven_dec0
+ 12. Parameter Settings for User Entity Instance: SevenHexDecoder:seven_dec1
+ 13. Parameter Settings for User Entity Instance: SevenHexDecoder:seven_dec2
+ 14. Parameter Settings for User Entity Instance: SevenHexDecoder:seven_dec3
+ 15. Port Connectivity Checks: "Debounce:deb0"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Sep 27 11:06:19 2019       ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
+; Revision Name                      ; DE2_115                                     ;
+; Top-level Entity Name              ; DE2_115                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 125                                         ;
+;     Total combinational functions  ; 123                                         ;
+;     Dedicated logic registers      ; 60                                          ;
+; Total registers                    ; 60                                          ;
+; Total pins                         ; 480                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; DE2_115            ; DE2_115            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; On                 ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; SevenHexDecoder.sv               ; yes             ; User SystemVerilog HDL File  ; C:/Users/question_mark/Desktop/dick/NTUEE-DCLAB-Materials/lab1/src/DE2_115/SevenHexDecoder.sv ;         ;
+; Debounce.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/question_mark/Desktop/dick/NTUEE-DCLAB-Materials/lab1/src/DE2_115/Debounce.sv        ;         ;
+; DE2_115.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/question_mark/Desktop/dick/NTUEE-DCLAB-Materials/lab1/src/DE2_115/DE2_115.sv         ;         ;
+; ../Top.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/question_mark/Desktop/dick/NTUEE-DCLAB-Materials/lab1/src/Top.sv                     ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 125            ;
+;                                             ;                ;
+; Total combinational functions               ; 123            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 54             ;
+;     -- 3 input functions                    ; 13             ;
+;     -- <=2 input functions                  ; 56             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 97             ;
+;     -- arithmetic mode                      ; 26             ;
+;                                             ;                ;
+; Total registers                             ; 60             ;
+;     -- Dedicated logic registers            ; 60             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 480            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 60             ;
+; Total fan-out                               ; 1212           ;
+; Average fan-out                             ; 0.94           ;
++---------------------------------------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                              ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+; |DE2_115                        ; 123 (0)           ; 60 (0)       ; 0           ; 0            ; 0       ; 0         ; 480  ; 0            ; |DE2_115                            ; work         ;
+;    |Debounce:deb0|              ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Debounce:deb0              ; work         ;
+;    |SevenHexDecoder:seven_dec0| ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|SevenHexDecoder:seven_dec0 ; work         ;
+;    |SevenHexDecoder:seven_dec1| ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|SevenHexDecoder:seven_dec1 ; work         ;
+;    |SevenHexDecoder:seven_dec2| ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|SevenHexDecoder:seven_dec2 ; work         ;
+;    |SevenHexDecoder:seven_dec3| ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|SevenHexDecoder:seven_dec3 ; work         ;
+;    |Top:top0|                   ; 85 (0)            ; 55 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top0                   ; work         ;
+;       |Control:crtl|            ; 45 (45)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top0|Control:crtl      ; work         ;
+;       |LFSR:LFSR|               ; 29 (29)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top0|LFSR:LFSR         ; work         ;
+;       |Memory:mem0|             ; 3 (3)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top0|Memory:mem0       ; work         ;
+;       |Memory:mem1|             ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top0|Memory:mem1       ; work         ;
+;       |Memory:mem2|             ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Top:top0|Memory:mem2       ; work         ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 60    ;
+; Number of registers using Synchronous Clear  ; 28    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 5     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 27    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_115|Top:top0|LFSR:LFSR|register_r[9]    ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|Top:top0|Memory:mem0|register_r[3]  ;
+; 5:1                ; 27 bits   ; 81 LEs        ; 27 LEs               ; 54 LEs                 ; Yes        ; |DE2_115|Top:top0|Control:crtl|counter_r[26] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Debounce:deb0 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; CNT_N          ; 7     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SevenHexDecoder:seven_dec0 ;
++----------------+---------+----------------------------------------------+
+; Parameter Name ; Value   ; Type                                         ;
++----------------+---------+----------------------------------------------+
+; D0             ; 1000000 ; Unsigned Binary                              ;
+; D1             ; 1111001 ; Unsigned Binary                              ;
+; D2             ; 0100100 ; Unsigned Binary                              ;
+; D3             ; 0110000 ; Unsigned Binary                              ;
+; D4             ; 0011001 ; Unsigned Binary                              ;
+; D5             ; 0010010 ; Unsigned Binary                              ;
+; D6             ; 0000010 ; Unsigned Binary                              ;
+; D7             ; 1011000 ; Unsigned Binary                              ;
+; D8             ; 0000000 ; Unsigned Binary                              ;
+; D9             ; 0010000 ; Unsigned Binary                              ;
++----------------+---------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SevenHexDecoder:seven_dec1 ;
++----------------+---------+----------------------------------------------+
+; Parameter Name ; Value   ; Type                                         ;
++----------------+---------+----------------------------------------------+
+; D0             ; 1000000 ; Unsigned Binary                              ;
+; D1             ; 1111001 ; Unsigned Binary                              ;
+; D2             ; 0100100 ; Unsigned Binary                              ;
+; D3             ; 0110000 ; Unsigned Binary                              ;
+; D4             ; 0011001 ; Unsigned Binary                              ;
+; D5             ; 0010010 ; Unsigned Binary                              ;
+; D6             ; 0000010 ; Unsigned Binary                              ;
+; D7             ; 1011000 ; Unsigned Binary                              ;
+; D8             ; 0000000 ; Unsigned Binary                              ;
+; D9             ; 0010000 ; Unsigned Binary                              ;
++----------------+---------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SevenHexDecoder:seven_dec2 ;
++----------------+---------+----------------------------------------------+
+; Parameter Name ; Value   ; Type                                         ;
++----------------+---------+----------------------------------------------+
+; D0             ; 1000000 ; Unsigned Binary                              ;
+; D1             ; 1111001 ; Unsigned Binary                              ;
+; D2             ; 0100100 ; Unsigned Binary                              ;
+; D3             ; 0110000 ; Unsigned Binary                              ;
+; D4             ; 0011001 ; Unsigned Binary                              ;
+; D5             ; 0010010 ; Unsigned Binary                              ;
+; D6             ; 0000010 ; Unsigned Binary                              ;
+; D7             ; 1011000 ; Unsigned Binary                              ;
+; D8             ; 0000000 ; Unsigned Binary                              ;
+; D9             ; 0010000 ; Unsigned Binary                              ;
++----------------+---------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SevenHexDecoder:seven_dec3 ;
++----------------+---------+----------------------------------------------+
+; Parameter Name ; Value   ; Type                                         ;
++----------------+---------+----------------------------------------------+
+; D0             ; 1000000 ; Unsigned Binary                              ;
+; D1             ; 1111001 ; Unsigned Binary                              ;
+; D2             ; 0100100 ; Unsigned Binary                              ;
+; D3             ; 0110000 ; Unsigned Binary                              ;
+; D4             ; 0011001 ; Unsigned Binary                              ;
+; D5             ; 0010010 ; Unsigned Binary                              ;
+; D6             ; 0000010 ; Unsigned Binary                              ;
+; D7             ; 1011000 ; Unsigned Binary                              ;
+; D8             ; 0000000 ; Unsigned Binary                              ;
+; D9             ; 0010000 ; Unsigned Binary                              ;
++----------------+---------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Debounce:deb0"                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                  ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; o_debounced ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; o_pos       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 480                         ;
+; cycloneiii_ff         ; 60                          ;
+;     CLR               ; 5                           ;
+;     ENA               ; 26                          ;
+;     ENA SLD           ; 1                           ;
+;     SCLR              ; 28                          ;
+; cycloneiii_io_obuf    ; 141                         ;
+; cycloneiii_lcell_comb ; 133                         ;
+;     arith             ; 26                          ;
+;         2 data inputs ; 26                          ;
+;     normal            ; 107                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 54                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 1.67                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+    Info: Processing started: Fri Sep 27 11:06:09 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c DE2_115
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file sevenhexdecoder.sv
+    Info (12023): Found entity 1: SevenHexDecoder
+Info (12021): Found 1 design units, including 1 entities, in source file debounce.sv
+    Info (12023): Found entity 1: Debounce
+Info (12021): Found 1 design units, including 1 entities, in source file de2_115.sv
+    Info (12023): Found entity 1: DE2_115
+Info (12021): Found 4 design units, including 4 entities, in source file /users/question_mark/desktop/dick/ntuee-dclab-materials/lab1/src/top.sv
+    Info (12023): Found entity 1: Top
+    Info (12023): Found entity 2: Memory
+    Info (12023): Found entity 3: LFSR
+    Info (12023): Found entity 4: Control
+Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
+Warning (10034): Output port "LEDG" at DE2_115.sv(8) has no driver
+Warning (10034): Output port "LEDR" at DE2_115.sv(9) has no driver
+Warning (10034): Output port "VGA_B" at DE2_115.sv(38) has no driver
+Warning (10034): Output port "VGA_G" at DE2_115.sv(41) has no driver
+Warning (10034): Output port "VGA_R" at DE2_115.sv(43) has no driver
+Warning (10034): Output port "ENET0_TX_DATA" at DE2_115.sv(68) has no driver
+Warning (10034): Output port "ENET1_TX_DATA" at DE2_115.sv(84) has no driver
+Warning (10034): Output port "OTG_ADDR" at DE2_115.sv(94) has no driver
+Warning (10034): Output port "DRAM_ADDR" at DE2_115.sv(101) has no driver
+Warning (10034): Output port "DRAM_BA" at DE2_115.sv(102) has no driver
+Warning (10034): Output port "DRAM_DQM" at DE2_115.sv(108) has no driver
+Warning (10034): Output port "SRAM_ADDR" at DE2_115.sv(111) has no driver
+Warning (10034): Output port "FL_ADDR" at DE2_115.sv(118) has no driver
+Warning (10034): Output port "HSMC_TX_D_P" at DE2_115.sv(135) has no driver
+Warning (10034): Output port "SMA_CLKOUT" at DE2_115.sv(7) has no driver
+Warning (10034): Output port "LCD_BLON" at DE2_115.sv(20) has no driver
+Warning (10034): Output port "LCD_EN" at DE2_115.sv(22) has no driver
+Warning (10034): Output port "LCD_ON" at DE2_115.sv(23) has no driver
+Warning (10034): Output port "LCD_RS" at DE2_115.sv(24) has no driver
+Warning (10034): Output port "LCD_RW" at DE2_115.sv(25) has no driver
+Warning (10034): Output port "UART_CTS" at DE2_115.sv(26) has no driver
+Warning (10034): Output port "UART_TXD" at DE2_115.sv(29) has no driver
+Warning (10034): Output port "SD_CLK" at DE2_115.sv(34) has no driver
+Warning (10034): Output port "VGA_BLANK_N" at DE2_115.sv(39) has no driver
+Warning (10034): Output port "VGA_CLK" at DE2_115.sv(40) has no driver
+Warning (10034): Output port "VGA_HS" at DE2_115.sv(42) has no driver
+Warning (10034): Output port "VGA_SYNC_N" at DE2_115.sv(44) has no driver
+Warning (10034): Output port "VGA_VS" at DE2_115.sv(45) has no driver
+Warning (10034): Output port "AUD_DACDAT" at DE2_115.sv(49) has no driver
+Warning (10034): Output port "AUD_XCK" at DE2_115.sv(51) has no driver
+Warning (10034): Output port "EEP_I2C_SCLK" at DE2_115.sv(52) has no driver
+Warning (10034): Output port "I2C_SCLK" at DE2_115.sv(54) has no driver
+Warning (10034): Output port "ENET0_GTX_CLK" at DE2_115.sv(56) has no driver
+Warning (10034): Output port "ENET0_MDC" at DE2_115.sv(58) has no driver
+Warning (10034): Output port "ENET0_RST_N" at DE2_115.sv(60) has no driver
+Warning (10034): Output port "ENET0_TX_EN" at DE2_115.sv(69) has no driver
+Warning (10034): Output port "ENET0_TX_ER" at DE2_115.sv(70) has no driver
+Warning (10034): Output port "ENET1_GTX_CLK" at DE2_115.sv(72) has no driver
+Warning (10034): Output port "ENET1_MDC" at DE2_115.sv(74) has no driver
+Warning (10034): Output port "ENET1_RST_N" at DE2_115.sv(76) has no driver
+Warning (10034): Output port "ENET1_TX_EN" at DE2_115.sv(85) has no driver
+Warning (10034): Output port "ENET1_TX_ER" at DE2_115.sv(86) has no driver
+Warning (10034): Output port "TD_RESET_N" at DE2_115.sv(91) has no driver
+Warning (10034): Output port "OTG_CS_N" at DE2_115.sv(95) has no driver
+Warning (10034): Output port "OTG_WR_N" at DE2_115.sv(96) has no driver
+Warning (10034): Output port "OTG_RD_N" at DE2_115.sv(97) has no driver
+Warning (10034): Output port "OTG_RST_N" at DE2_115.sv(99) has no driver
+Warning (10034): Output port "DRAM_CAS_N" at DE2_115.sv(103) has no driver
+Warning (10034): Output port "DRAM_CKE" at DE2_115.sv(104) has no driver
+Warning (10034): Output port "DRAM_CLK" at DE2_115.sv(105) has no driver
+Warning (10034): Output port "DRAM_CS_N" at DE2_115.sv(106) has no driver
+Warning (10034): Output port "DRAM_RAS_N" at DE2_115.sv(109) has no driver
+Warning (10034): Output port "DRAM_WE_N" at DE2_115.sv(110) has no driver
+Warning (10034): Output port "SRAM_CE_N" at DE2_115.sv(112) has no driver
+Warning (10034): Output port "SRAM_LB_N" at DE2_115.sv(114) has no driver
+Warning (10034): Output port "SRAM_OE_N" at DE2_115.sv(115) has no driver
+Warning (10034): Output port "SRAM_UB_N" at DE2_115.sv(116) has no driver
+Warning (10034): Output port "SRAM_WE_N" at DE2_115.sv(117) has no driver
+Warning (10034): Output port "FL_CE_N" at DE2_115.sv(119) has no driver
+Warning (10034): Output port "FL_OE_N" at DE2_115.sv(121) has no driver
+Warning (10034): Output port "FL_RST_N" at DE2_115.sv(122) has no driver
+Warning (10034): Output port "FL_WE_N" at DE2_115.sv(124) has no driver
+Warning (10034): Output port "FL_WP_N" at DE2_115.sv(125) has no driver
+Warning (10034): Output port "HSMC_CLKOUT_P1" at DE2_115.sv(130) has no driver
+Warning (10034): Output port "HSMC_CLKOUT_P2" at DE2_115.sv(131) has no driver
+Warning (10034): Output port "HSMC_CLKOUT0" at DE2_115.sv(132) has no driver
+Info (12128): Elaborating entity "Debounce" for hierarchy "Debounce:deb0"
+Warning (10230): Verilog HDL assignment warning at Debounce.sv(23): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at Debounce.sv(25): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "Top" for hierarchy "Top:top0"
+Info (12128): Elaborating entity "Control" for hierarchy "Top:top0|Control:crtl"
+Warning (10230): Verilog HDL assignment warning at Top.sv(142): truncated value with size 32 to match size of target (27)
+Info (12128): Elaborating entity "LFSR" for hierarchy "Top:top0|LFSR:LFSR"
+Info (12128): Elaborating entity "Memory" for hierarchy "Top:top0|Memory:mem0"
+Info (12128): Elaborating entity "SevenHexDecoder" for hierarchy "SevenHexDecoder:seven_dec0"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "LCD_DATA[0]" has no driver
+    Warning (13040): bidirectional pin "LCD_DATA[1]" has no driver
+    Warning (13040): bidirectional pin "LCD_DATA[2]" has no driver
+    Warning (13040): bidirectional pin "LCD_DATA[3]" has no driver
+    Warning (13040): bidirectional pin "LCD_DATA[4]" has no driver
+    Warning (13040): bidirectional pin "LCD_DATA[5]" has no driver
+    Warning (13040): bidirectional pin "LCD_DATA[6]" has no driver
+    Warning (13040): bidirectional pin "LCD_DATA[7]" has no driver
+    Warning (13040): bidirectional pin "PS2_CLK" has no driver
+    Warning (13040): bidirectional pin "PS2_DAT" has no driver
+    Warning (13040): bidirectional pin "PS2_CLK2" has no driver
+    Warning (13040): bidirectional pin "PS2_DAT2" has no driver
+    Warning (13040): bidirectional pin "SD_CMD" has no driver
+    Warning (13040): bidirectional pin "SD_DAT[0]" has no driver
+    Warning (13040): bidirectional pin "SD_DAT[1]" has no driver
+    Warning (13040): bidirectional pin "SD_DAT[2]" has no driver
+    Warning (13040): bidirectional pin "SD_DAT[3]" has no driver
+    Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver
+    Warning (13040): bidirectional pin "AUD_BCLK" has no driver
+    Warning (13040): bidirectional pin "AUD_DACLRCK" has no driver
+    Warning (13040): bidirectional pin "EEP_I2C_SDAT" has no driver
+    Warning (13040): bidirectional pin "I2C_SDAT" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[0]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[1]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[2]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[3]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[4]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[5]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[6]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[7]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[8]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[9]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[10]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[11]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[12]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[13]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[14]" has no driver
+    Warning (13040): bidirectional pin "OTG_DATA[15]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[16]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[17]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[18]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[19]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[20]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[21]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[22]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[23]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[24]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[25]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[26]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[27]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[28]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[29]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[30]" has no driver
+    Warning (13040): bidirectional pin "DRAM_DQ[31]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[0]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[1]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[2]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[3]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[4]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[5]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[6]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[7]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[8]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[9]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[10]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[11]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[12]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[13]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[14]" has no driver
+    Warning (13040): bidirectional pin "SRAM_DQ[15]" has no driver
+    Warning (13040): bidirectional pin "FL_DQ[0]" has no driver
+    Warning (13040): bidirectional pin "FL_DQ[1]" has no driver
+    Warning (13040): bidirectional pin "FL_DQ[2]" has no driver
+    Warning (13040): bidirectional pin "FL_DQ[3]" has no driver
+    Warning (13040): bidirectional pin "FL_DQ[4]" has no driver
+    Warning (13040): bidirectional pin "FL_DQ[5]" has no driver
+    Warning (13040): bidirectional pin "FL_DQ[6]" has no driver
+    Warning (13040): bidirectional pin "FL_DQ[7]" has no driver
+    Warning (13040): bidirectional pin "GPIO[0]" has no driver
+    Warning (13040): bidirectional pin "GPIO[1]" has no driver
+    Warning (13040): bidirectional pin "GPIO[2]" has no driver
+    Warning (13040): bidirectional pin "GPIO[3]" has no driver
+    Warning (13040): bidirectional pin "GPIO[4]" has no driver
+    Warning (13040): bidirectional pin "GPIO[5]" has no driver
+    Warning (13040): bidirectional pin "GPIO[6]" has no driver
+    Warning (13040): bidirectional pin "GPIO[7]" has no driver
+    Warning (13040): bidirectional pin "GPIO[8]" has no driver
+    Warning (13040): bidirectional pin "GPIO[9]" has no driver
+    Warning (13040): bidirectional pin "GPIO[10]" has no driver
+    Warning (13040): bidirectional pin "GPIO[11]" has no driver
+    Warning (13040): bidirectional pin "GPIO[12]" has no driver
+    Warning (13040): bidirectional pin "GPIO[13]" has no driver
+    Warning (13040): bidirectional pin "GPIO[14]" has no driver
+    Warning (13040): bidirectional pin "GPIO[15]" has no driver
+    Warning (13040): bidirectional pin "GPIO[16]" has no driver
+    Warning (13040): bidirectional pin "GPIO[17]" has no driver
+    Warning (13040): bidirectional pin "GPIO[18]" has no driver
+    Warning (13040): bidirectional pin "GPIO[19]" has no driver
+    Warning (13040): bidirectional pin "GPIO[20]" has no driver
+    Warning (13040): bidirectional pin "GPIO[21]" has no driver
+    Warning (13040): bidirectional pin "GPIO[22]" has no driver
+    Warning (13040): bidirectional pin "GPIO[23]" has no driver
+    Warning (13040): bidirectional pin "GPIO[24]" has no driver
+    Warning (13040): bidirectional pin "GPIO[25]" has no driver
+    Warning (13040): bidirectional pin "GPIO[26]" has no driver
+    Warning (13040): bidirectional pin "GPIO[27]" has no driver
+    Warning (13040): bidirectional pin "GPIO[28]" has no driver
+    Warning (13040): bidirectional pin "GPIO[29]" has no driver
+    Warning (13040): bidirectional pin "GPIO[30]" has no driver
+    Warning (13040): bidirectional pin "GPIO[31]" has no driver
+    Warning (13040): bidirectional pin "GPIO[32]" has no driver
+    Warning (13040): bidirectional pin "GPIO[33]" has no driver
+    Warning (13040): bidirectional pin "GPIO[34]" has no driver
+    Warning (13040): bidirectional pin "GPIO[35]" has no driver
+    Warning (13040): bidirectional pin "HSMC_D[0]" has no driver
+    Warning (13040): bidirectional pin "HSMC_D[1]" has no driver
+    Warning (13040): bidirectional pin "HSMC_D[2]" has no driver
+    Warning (13040): bidirectional pin "HSMC_D[3]" has no driver
+    Warning (13040): bidirectional pin "EX_IO[0]" has no driver
+    Warning (13040): bidirectional pin "EX_IO[1]" has no driver
+    Warning (13040): bidirectional pin "EX_IO[2]" has no driver
+    Warning (13040): bidirectional pin "EX_IO[3]" has no driver
+    Warning (13040): bidirectional pin "EX_IO[4]" has no driver
+    Warning (13040): bidirectional pin "EX_IO[5]" has no driver
+    Warning (13040): bidirectional pin "EX_IO[6]" has no driver
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "SMA_CLKOUT" is stuck at GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "LEDG[3]" is stuck at GND
+    Warning (13410): Pin "LEDG[4]" is stuck at GND
+    Warning (13410): Pin "LEDG[5]" is stuck at GND
+    Warning (13410): Pin "LEDG[6]" is stuck at GND
+    Warning (13410): Pin "LEDG[7]" is stuck at GND
+    Warning (13410): Pin "LEDG[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
+    Warning (13410): Pin "LEDR[17]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "HEX7[1]" is stuck at GND
+    Warning (13410): Pin "HEX7[2]" is stuck at GND
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC
+    Warning (13410): Pin "LCD_BLON" is stuck at GND
+    Warning (13410): Pin "LCD_EN" is stuck at GND
+    Warning (13410): Pin "LCD_ON" is stuck at GND
+    Warning (13410): Pin "LCD_RS" is stuck at GND
+    Warning (13410): Pin "LCD_RW" is stuck at GND
+    Warning (13410): Pin "UART_CTS" is stuck at GND
+    Warning (13410): Pin "UART_TXD" is stuck at GND
+    Warning (13410): Pin "SD_CLK" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND
+    Warning (13410): Pin "VGA_BLANK_N" is stuck at GND
+    Warning (13410): Pin "VGA_CLK" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND
+    Warning (13410): Pin "VGA_G[5]" is stuck at GND
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND
+    Warning (13410): Pin "VGA_G[7]" is stuck at GND
+    Warning (13410): Pin "VGA_HS" is stuck at GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND
+    Warning (13410): Pin "VGA_R[5]" is stuck at GND
+    Warning (13410): Pin "VGA_R[6]" is stuck at GND
+    Warning (13410): Pin "VGA_R[7]" is stuck at GND
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
+    Warning (13410): Pin "VGA_VS" is stuck at GND
+    Warning (13410): Pin "AUD_DACDAT" is stuck at GND
+    Warning (13410): Pin "AUD_XCK" is stuck at GND
+    Warning (13410): Pin "EEP_I2C_SCLK" is stuck at GND
+    Warning (13410): Pin "I2C_SCLK" is stuck at GND
+    Warning (13410): Pin "ENET0_GTX_CLK" is stuck at GND
+    Warning (13410): Pin "ENET0_MDC" is stuck at GND
+    Warning (13410): Pin "ENET0_RST_N" is stuck at GND
+    Warning (13410): Pin "ENET0_TX_DATA[0]" is stuck at GND
+    Warning (13410): Pin "ENET0_TX_DATA[1]" is stuck at GND
+    Warning (13410): Pin "ENET0_TX_DATA[2]" is stuck at GND
+    Warning (13410): Pin "ENET0_TX_DATA[3]" is stuck at GND
+    Warning (13410): Pin "ENET0_TX_EN" is stuck at GND
+    Warning (13410): Pin "ENET0_TX_ER" is stuck at GND
+    Warning (13410): Pin "ENET1_GTX_CLK" is stuck at GND
+    Warning (13410): Pin "ENET1_MDC" is stuck at GND
+    Warning (13410): Pin "ENET1_RST_N" is stuck at GND
+    Warning (13410): Pin "ENET1_TX_DATA[0]" is stuck at GND
+    Warning (13410): Pin "ENET1_TX_DATA[1]" is stuck at GND
+    Warning (13410): Pin "ENET1_TX_DATA[2]" is stuck at GND
+    Warning (13410): Pin "ENET1_TX_DATA[3]" is stuck at GND
+    Warning (13410): Pin "ENET1_TX_EN" is stuck at GND
+    Warning (13410): Pin "ENET1_TX_ER" is stuck at GND
+    Warning (13410): Pin "TD_RESET_N" is stuck at GND
+    Warning (13410): Pin "OTG_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "OTG_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "OTG_CS_N" is stuck at GND
+    Warning (13410): Pin "OTG_WR_N" is stuck at GND
+    Warning (13410): Pin "OTG_RD_N" is stuck at GND
+    Warning (13410): Pin "OTG_RST_N" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND
+    Warning (13410): Pin "DRAM_DQM[0]" is stuck at GND
+    Warning (13410): Pin "DRAM_DQM[1]" is stuck at GND
+    Warning (13410): Pin "DRAM_DQM[2]" is stuck at GND
+    Warning (13410): Pin "DRAM_DQM[3]" is stuck at GND
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[12]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[13]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[14]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[15]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[16]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[17]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[18]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[19]" is stuck at GND
+    Warning (13410): Pin "SRAM_CE_N" is stuck at GND
+    Warning (13410): Pin "SRAM_LB_N" is stuck at GND
+    Warning (13410): Pin "SRAM_OE_N" is stuck at GND
+    Warning (13410): Pin "SRAM_UB_N" is stuck at GND
+    Warning (13410): Pin "SRAM_WE_N" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[12]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[13]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[14]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[15]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[16]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[17]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[18]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[19]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[20]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[21]" is stuck at GND
+    Warning (13410): Pin "FL_ADDR[22]" is stuck at GND
+    Warning (13410): Pin "FL_CE_N" is stuck at GND
+    Warning (13410): Pin "FL_OE_N" is stuck at GND
+    Warning (13410): Pin "FL_RST_N" is stuck at GND
+    Warning (13410): Pin "FL_WE_N" is stuck at GND
+    Warning (13410): Pin "FL_WP_N" is stuck at GND
+    Warning (13410): Pin "HSMC_CLKOUT_P1" is stuck at GND
+    Warning (13410): Pin "HSMC_CLKOUT_P2" is stuck at GND
+    Warning (13410): Pin "HSMC_CLKOUT0" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[0]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[1]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[2]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[3]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[4]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[5]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[6]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[7]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[8]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[9]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[10]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[11]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[12]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[13]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[14]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[15]" is stuck at GND
+    Warning (13410): Pin "HSMC_TX_D_P[16]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 88 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK2_50"
+    Warning (15610): No output dependent on input pin "CLOCK3_50"
+    Warning (15610): No output dependent on input pin "ENETCLK_25"
+    Warning (15610): No output dependent on input pin "SMA_CLKIN"
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+    Warning (15610): No output dependent on input pin "SW[17]"
+    Warning (15610): No output dependent on input pin "UART_RTS"
+    Warning (15610): No output dependent on input pin "UART_RXD"
+    Warning (15610): No output dependent on input pin "SD_WP_N"
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT"
+    Warning (15610): No output dependent on input pin "ENET0_INT_N"
+    Warning (15610): No output dependent on input pin "ENET0_MDIO"
+    Warning (15610): No output dependent on input pin "ENET0_RX_CLK"
+    Warning (15610): No output dependent on input pin "ENET0_RX_COL"
+    Warning (15610): No output dependent on input pin "ENET0_RX_CRS"
+    Warning (15610): No output dependent on input pin "ENET0_RX_DATA[0]"
+    Warning (15610): No output dependent on input pin "ENET0_RX_DATA[1]"
+    Warning (15610): No output dependent on input pin "ENET0_RX_DATA[2]"
+    Warning (15610): No output dependent on input pin "ENET0_RX_DATA[3]"
+    Warning (15610): No output dependent on input pin "ENET0_RX_DV"
+    Warning (15610): No output dependent on input pin "ENET0_RX_ER"
+    Warning (15610): No output dependent on input pin "ENET0_TX_CLK"
+    Warning (15610): No output dependent on input pin "ENET0_LINK100"
+    Warning (15610): No output dependent on input pin "ENET1_INT_N"
+    Warning (15610): No output dependent on input pin "ENET1_MDIO"
+    Warning (15610): No output dependent on input pin "ENET1_RX_CLK"
+    Warning (15610): No output dependent on input pin "ENET1_RX_COL"
+    Warning (15610): No output dependent on input pin "ENET1_RX_CRS"
+    Warning (15610): No output dependent on input pin "ENET1_RX_DATA[0]"
+    Warning (15610): No output dependent on input pin "ENET1_RX_DATA[1]"
+    Warning (15610): No output dependent on input pin "ENET1_RX_DATA[2]"
+    Warning (15610): No output dependent on input pin "ENET1_RX_DATA[3]"
+    Warning (15610): No output dependent on input pin "ENET1_RX_DV"
+    Warning (15610): No output dependent on input pin "ENET1_RX_ER"
+    Warning (15610): No output dependent on input pin "ENET1_TX_CLK"
+    Warning (15610): No output dependent on input pin "ENET1_LINK100"
+    Warning (15610): No output dependent on input pin "TD_CLK27"
+    Warning (15610): No output dependent on input pin "TD_DATA[0]"
+    Warning (15610): No output dependent on input pin "TD_DATA[1]"
+    Warning (15610): No output dependent on input pin "TD_DATA[2]"
+    Warning (15610): No output dependent on input pin "TD_DATA[3]"
+    Warning (15610): No output dependent on input pin "TD_DATA[4]"
+    Warning (15610): No output dependent on input pin "TD_DATA[5]"
+    Warning (15610): No output dependent on input pin "TD_DATA[6]"
+    Warning (15610): No output dependent on input pin "TD_DATA[7]"
+    Warning (15610): No output dependent on input pin "TD_HS"
+    Warning (15610): No output dependent on input pin "TD_VS"
+    Warning (15610): No output dependent on input pin "OTG_INT"
+    Warning (15610): No output dependent on input pin "IRDA_RXD"
+    Warning (15610): No output dependent on input pin "FL_RY"
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_P1"
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN_P2"
+    Warning (15610): No output dependent on input pin "HSMC_CLKIN0"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[0]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[1]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[2]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[3]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[4]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[5]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[6]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[7]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[8]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[9]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[10]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[11]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[12]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[13]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[14]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[15]"
+    Warning (15610): No output dependent on input pin "HSMC_RX_D_P[16]"
+Info (21057): Implemented 607 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 91 input pins
+    Info (21059): Implemented 248 output pins
+    Info (21060): Implemented 141 bidirectional pins
+    Info (21061): Implemented 127 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 506 warnings
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Fri Sep 27 11:06:19 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
+
+
